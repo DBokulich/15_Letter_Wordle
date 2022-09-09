@@ -4,7 +4,8 @@ import java.io.FileNotFoundException;
 
 public class Main {
   public static void main(String[] args) {
-    WordleInterface play = new Wordle(); // Play a game of Wordle //FIXME: Needs to be able to have a specific length and difficulty
+    WordleInterface play = new Wordle(); // Play a game of Wordle
+    
     // Set up the game ////////////////////////////////////
     Scanner scanner = new Scanner(System.in);
     String input = null; // Holds the player's guess
