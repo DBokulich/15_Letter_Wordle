@@ -10,21 +10,13 @@ public class Main {
     String input = null; // Holds the player's guess
     boolean gameLoop = true;
 
-    // Initalizing gameState, the array which holds most game fields
-    int[] gameState;
-    gameState = new int[15]; // Array that keeps the games values
-    gameState[0] = 10; // Initial starting health
     int MaxwrdLe = 15;
     int minwrdLe = 1;
     int wrdLe = (((int)((Math.random() * MaxwrdLe) % MaxwrdLe)) + minwrdLe); // Variable word length, make it's own class or method
 
-    wrdLe = 15; //FIXME testing
+    wrdLe = 15; //Forces 15 letters, remove this to randomly choose between minwrdLe and MaxwrdLe
     
     int tries = 10; // Variable number of tries
-    
-    
-    int[] items = new int[15]; // Array that keeps track of which items the player has
-      
     
     // Gameplay loop //////////////////////////////////
     while (gameLoop) {
