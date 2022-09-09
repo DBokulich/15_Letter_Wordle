@@ -22,7 +22,7 @@ public class Main {
     while (gameLoop) {
       
       boolean loop = true;
-      play.Wordle_Game(gameState, items, wrdLe, tries);
+      play.Wordle_Game(wrdLe, tries);
       System.out.print("Play again? 0 for yes, 1 for no: ");
       input = scanner.nextLine();
       while (loop) {
