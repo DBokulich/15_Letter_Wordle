@@ -39,7 +39,6 @@ public class Wordle implements WordleInterface {
     while (secWord.length() != wrdLe) {
       secWord = wordleList.random(); // Holds the random secret word
     }
-    // System.out.println("secWord: " + secWord); //FIXME testing
     boolean game = true; // loops the game while it has not ended
     boolean win = false; // Tracks whether the player won when the game ends
     int tries = 0; // Tracks the current number of tries
@@ -95,7 +94,7 @@ public class Wordle implements WordleInterface {
     int[] lettersMarked = new int[secWord.length()]; // Array that stores what indexes are correct, in the word, and wrong
 
     // Counts the number of each letter in the word, ex. [0] == numA
-    int[] secCount = countLetters(secWord); //FIXME constant while game runs?
+    int[] secCount = countLetters(secWord);
     // Tracks the number of letters correct or misplaced so far
     int[] soFar = new int[26];
 
@@ -122,7 +121,7 @@ public class Wordle implements WordleInterface {
           lettersMarked[i] = Misplaced(lettersMarked, inWord, i, soFar, secCount);
           if (lettersMarked[i] == 1) {
             int letter = (int) inWord.charAt(i) - 65;
-            //System.out.println(letter + " " + inWord.charAt(i)); //FIXME testing
+            //System.out.println(letter + " " + inWord.charAt(i));
             soFar[letter] += 1;
           }
         }
@@ -165,7 +164,6 @@ public class Wordle implements WordleInterface {
         // If the ascii values match
         if (((int)(word.charAt(i))) == (j + 65)) {
           // Add one to the corrosponding index in the rv and leave this loop
-          //FIXME System.out.println("Letter: " + word.charAt(i) + "\tj: " + j); //FIXME testing
           alphabet[j] += 1; 
           j = alphabet.length;
         }
@@ -184,22 +182,5 @@ public class Wordle implements WordleInterface {
         System.out.print(" " + "|" + (inWord.charAt(i)) + "|" + " ");
       }
     }
-
-    /*
-    // Visual output for testing
-    System.out.print("\nAlphabet:\t\t");
-    for (int i = 0; i < soFar.length; i++) 
-    System.out.print((char)(i + 65) + " ");
-    
-    System.out.print("\nsoFar:\t\t\t");
-    for (int i = 0; i < soFar.length; i++) 
-    System.out.print(soFar[i] + " ");
-    System.out.print("\nsecCount:\t\t");
-    for (int i = 0; i < secCount.length; i++) 
-    System.out.print(secCount[i] + " ");
-    System.out.print("\n\nlettersmarked:\t");
-    for (int i = 0; i < lettersMarked.length; i++) 
-    System.out.print(lettersMarked[i] + " ");
-    */
   }
 }
