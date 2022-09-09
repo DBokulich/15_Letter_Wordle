@@ -5,12 +5,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Wordle implements WordleInterface {
-  public int[] Wordle_Game(int[] gameState, int[] items, int wrdLe, int numTries) { // Make seperate Class for Wordle_Game inputs
+  public void Wordle_Game(int wrdLe, int numTries) { // Make seperate Class for Wordle_Game inputs
 
     //Exception checking:
     if (wrdLe <= 0) {
       System.out.println("Error in Wordle_Game, wrdLe <= 0");
-      return gameState;
+      return;
     }
 
     // Extracts the words from a text file to an array list //////////
@@ -85,7 +85,7 @@ public class Wordle implements WordleInterface {
     } else { // If the player has lost
       System.out.println("You lose... The word was: " + secWord);
     }
-    return gameState;
+    return;
   }
 
   // Function used in main
