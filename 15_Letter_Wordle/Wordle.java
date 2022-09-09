@@ -1,5 +1,3 @@
-//FIXME impliment repeating letters
-
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
